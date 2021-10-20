@@ -38,19 +38,19 @@ points(log(data.with.no.na$chla_ug),log(data.with.no.na$tp_ug),col=data.with.no.
 
 
 plot(log(data.with.no.na$chla_ug),log(data.with.no.na$tp_ug),col=data.with.no.na$max.arch+1,pch=data.with.no.na$max.arch)
-abline(mean(fit$coef[1:7]),mean(fit$coef[8:14]),col=grey(.50),lwd=10)
-points(log(data.with.no.na$chla_ug),log(data.with.no.na$tp_ug),col=max.arch+1,pch=max.arch)
+abline(mean(fit.aa$coef[1:7]),mean(fit.aa$coef[8:14]),col=grey(.50),lwd=10)
+points(log(data.with.no.na$chla_ug),log(data.with.no.na$tp_ug),col=data.with.no.na$max.arch+1,pch=data.with.no.na$max.arch)
 for(k in 1:7){
-    abline(fit$coef[k],fit$coef[k+7],col=k+1,lty=1,lwd=2)
+    abline(fit.aa$coef[k],fit.aa$coef[k+7],col=k+1,lty=1,lwd=2)
 }
 
 par(mfrow=c(2,4))
 for(k in 1:7){
-    idx.k=which(max.arch==k)
+    idx.k=which(data.with.no.na$max.arch==k)
     if(length(idx.k)>0){
         plot(log(data.with.no.na$chla_ug),log(data.with.no.na$tp_ug),type="p",pch=".",col=grey(.6),main=paste("Arch = ",k,sep=""))
         points(log(data.with.no.na$chla_ug[idx.k]),log(data.with.no.na$tp_ug[idx.k]),col=k+1,main=paste("Arch = ",k,sep=""))
-        abline(fit$coef[k],fit$coef[k+7],col=k+1,lty=1,lwd=2)
+        abline(fit.aa$coef[k],fit.aa$coef[k+7],col=k+1,lty=1,lwd=2)
     }
 }
 
