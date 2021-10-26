@@ -276,7 +276,7 @@ summary(fit.aa.cat)
 
 
 ## fit correlation model between tp and tn_ug with eco-regions as interactions
-fit.ecoreg=lm(log(nitrtate_mg)~log(tn_ug)*ag_eco9,data=data)
+fit.ecoreg=lm(log(nitrate_mg)~log(tn_ug)*ag_eco9,data=data)
 summary(fit.ecoreg)
 
 ## see which has a better fit to the data
